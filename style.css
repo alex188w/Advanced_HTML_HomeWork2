@@ -194,29 +194,125 @@ a {
   color: #F16D7F;
 }
 
+label {
+  margin-right: 30px;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 13px;
+  color: #000;
+}
+
 .registration {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-top: 96px;
+  margin-top: 64px;
 }
-.registration__left {
-  width: 360px;
+.registration__title {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 19px;
+  color: #222;
+}
+.registration__sex {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 12px;
+  padding-bottom: 13px;
   padding-left: 1%;
 }
-.registration__right {
+.registration__text {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 16px;
+  color: #B1B1B1;
+}
+.registration__left {
   display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-right: 0.5%;
+  padding-left: 0.5%;
+}
+.registration__left__form {
   width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+}
+.registration__left input[type=text], .registration__left [type=password], .registration__left [type=email] {
+  width: 360px;
+  height: 45px;
+  border: 1px solid #a4a4a4;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 16px;
+  padding: 0 17px;
+}
+.registration__left input[type=text]::-moz-placeholder, .registration__left [type=password]::-moz-placeholder, .registration__left [type=email]::-moz-placeholder {
+  color: #b1b1b1;
+}
+.registration__left input[type=text]::placeholder, .registration__left [type=password]::placeholder, .registration__left [type=email]::placeholder {
+  color: #b1b1b1;
+}
+.registration__left input[type=radio] {
+  transform: scale(1.5);
+  transition: 0.2s all linear;
+  outline: none;
+  margin-right: 10px;
+}
+.registration__left input[type=submit] {
+  width: 167px;
+  height: 50px;
+  margin-top: 19px;
+  border: none;
+  border-radius: 1px;
+  color: #FFF;
+  background-color: #F16D7F;
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17px;
+  transition: 0.5s;
+}
+.registration__left input[type=submit]:hover {
+  border: violet;
+  color: violet;
+}
+.registration__left input[type=submit]:active {
+  border: #000000;
+  color: #000000;
+}
+.registration__right {
+  width: 632px;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   flex-direction: column;
-  flex-wrap: wrap;
-  padding-top: 31px;
-  padding-right: 1%;
-  gap: 57px;
+  padding-right: 0.5%;
+}
+.registration__right__title {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 29px;
+  color: #000;
+  padding-bottom: 22px;
+}
+.registration__right__action {
+  gap: 16px;
+}
+.registration__right__text {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 29px;
+  color: #000;
+}
+.registration__right__text:not(:last-child) {
+  padding-bottom: 16px;
 }
 
 .action {
@@ -236,9 +332,9 @@ a {
   top: 0;
   left: 0;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 .action__item__content__big {
   margin-top: 5%;
@@ -255,17 +351,16 @@ a {
   margin-top: 5%;
 }
 .action__item__text {
-  font-weight: 400;
   font-size: 16px;
+  font-weight: 400;
   line-height: 19px;
   text-align: center;
   color: #FFFFFF;
 }
 .action__item__heading {
-  font-weight: 700;
   font-size: 24px;
+  font-weight: 700;
   line-height: 29px;
-  text-align: center;
   color: #F16D7F;
 }
 
@@ -273,6 +368,7 @@ a {
   min-height: 180px;
   grid-column: 1/-1;
 }
+
 .action__content1 {
   position: absolute;
   width: 100%;
@@ -1003,6 +1099,14 @@ ul.pagination li a:hover {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+  .registration__right {
+    width: 355px;
+  }
+  .registration__right__title, .registration__right__text {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19px;
+  }
   .subscraibe {
     display: flex;
     justify-content: center;
@@ -1030,6 +1134,21 @@ ul.pagination li a:hover {
   }
 }
 @media screen and (max-width: 767px) {
+  .registration {
+    display: flex;
+    flex-direction: column;
+  }
+  .registration__right {
+    width: 355px;
+    padding-top: 40px;
+    padding-left: 0.5%;
+    padding-bottom: 4px;
+  }
+  .registration__right__title, .registration__right__text {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19px;
+  }
   .subscraibe {
     display: flex;
     justify-content: center;

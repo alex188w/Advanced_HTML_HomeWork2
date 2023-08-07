@@ -213,33 +213,122 @@ a {
     }
 }
 
+label {
+    margin-right: 30px;
+    @include fontsMy(12px, 300, 13px);
+    color: #000;   
+}
+
 .registration {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: space-between;   
     flex-direction: row;
     flex-wrap: wrap;
-    margin-top: 96px;
+    margin-top: 64px;
+    &__title {
+        @include fontsMy(16px, 300, 19px); 
+        color: #222;      
+    }
 
-    &__left {        
-        width: 360px;
-        display: flex;
-        flex-direction: column;
+    &__sex {    
+        @include displayMy(flex-start);
+        // gap: 20px;
+        padding-top: 12px;
+        padding-bottom: 13px;
         padding-left: 1%;
     }
 
-    &__right {
+    &__text {        
+        @include fontsMy(13px, 300, 16px);
+        color: #B1B1B1;
+    }   
+
+    &__left {          
         display: flex;
-        width: 360px;
-        justify-content: flex-start;
-        flex-direction: column;
-        // flex-direction: row;
-        flex-wrap: wrap;
-        padding-top: 31px;
-        padding-right: 1%;
-        gap: 57px;
+        justify-content: center;
+        flex-direction: column;       
+        padding-right: 0.5%;
+        padding-left: 0.5%;
+        &__form {
+            width: 360px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 20px;
+        }
+        input[type='text'], [type='password'], [type='email'] {
+            width: 360px;
+            height: 45px;
+            border: 1px solid #a4a4a4;
+            @include fontsMy(13px, 300, 16px); 
+            padding: 0 17px;
+
+            &::placeholder {
+                color: #b1b1b1;
+            }
+        }
+
+        input[type='radio'] { 
+            transform: scale(1.5); 
+            transition: 0.2s all linear;
+            outline: none;
+            margin-right: 10px;             
+        }
+
+        input[type='submit'] { 
+            width: 167px;
+            height: 50px;
+            margin-top: 19px;
+            border: none;
+            border-radius: 1px;
+            color: #FFF;
+            background-color: #F16D7F;
+            font-family: Lato;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 17px;
+            transition: 0.5s;
+            &:hover {
+                border: violet;
+                color: violet;
+            }
+
+            &:active {
+                border: #000000;
+                color: #000000;
+            }
+        }       
     }
+
+    &__right {
+        width: 632px;       
+        display: flex;        
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        flex-direction: column; 
+        padding-right: 0.5%;        
+        &__title {
+            @include fontsMy(24px, 300, 29px);
+            color: #000;
+            padding-bottom: 22px;
+        }
         
+        &__action {
+            gap: 16px;
+        }
+
+        &__text {
+            @include fontsMy(24px, 300, 29px);
+            color: #000;
+            // padding-bottom: 16px;            
+        }
+
+        &__text:not(:last-child) {
+            padding-bottom: 16px; 
+        }
+
+    }
 }
 
 .action {
@@ -251,18 +340,14 @@ a {
 
     &__item {
         position: relative;
-
         &__content {
             position: absolute;
             width: 100%;
             height: 100%;
             top: 0;
             left: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
+            @include displayMy(center);            
+            flex-direction: column;           
             &__big {
                 margin-top: 5%;
             }
@@ -281,18 +366,13 @@ a {
         }
 
         &__text {
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 19px;
+            @include fontsMy(16px, 400, 19px);            
             text-align: center;
             color: #FFFFFF;
         }
 
         &__heading {
-            font-weight: 700;
-            font-size: 24px;
-            line-height: 29px;
-            text-align: center;
+            @include fontsMy(24px, 700, 29px);           
             color: #F16D7F;
         }
     }
@@ -301,8 +381,6 @@ a {
 .item__big {
     min-height: 180px;
     grid-column: 1 / -1;
-
-    &__content-big {}
 }
 
 .action__content1 {
@@ -1061,6 +1139,13 @@ ul.pagination {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .registration__right {
+        width: 355px;
+        &__title, &__text {
+            @include fontsMy(16px, 300, 19px);
+        } 
+    }
+
     .subscraibe {
         @include displayMy(center);
         flex-direction: column;
@@ -1093,6 +1178,20 @@ ul.pagination {
 }
 
 @media screen and (max-width: 767px) {
+    .registration {
+        display: flex;        
+        flex-direction: column;
+        &__right {
+            width: 355px;
+            padding-top: 40px;            
+            padding-left: 0.5%;
+            padding-bottom: 4px;
+            &__title, &__text {
+                @include fontsMy(16px, 300, 19px);
+            }     
+        }
+    }
+    
     .subscraibe {
         @include displayMy(center);
         gap: 48px;
