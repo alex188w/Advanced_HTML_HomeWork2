@@ -54,7 +54,7 @@ a {
     @include displayMy(space-between);
     flex-direction: row;
     flex-wrap: wrap;
-    background: $colorContent;   
+    background: $colorContent;
 
     &__left {
         display: flex;
@@ -190,6 +190,7 @@ a {
 .breadcrumb {
     display: flex;
     padding-right: 1%;
+
     &__box-link:last-child .breadcrumb__link {
         font-weight: 700;
         color: $colorSite;
@@ -216,39 +217,40 @@ a {
 label {
     margin-right: 30px;
     @include fontsMy(12px, 300, 13px);
-    color: #000;   
+    color: #000;
 }
 
 .registration {
     display: flex;
-    justify-content: space-between;   
+    justify-content: space-between;
     flex-direction: row;
-    flex-wrap: wrap;
     margin-top: 64px;
+    margin-bottom: 96px;
+
     &__title {
-        @include fontsMy(16px, 300, 19px); 
-        color: #222;      
+        @include fontsMy(16px, 300, 19px);
+        color: #222;
     }
 
-    &__sex {    
+    &__sex {
         @include displayMy(flex-start);
-        // gap: 20px;
         padding-top: 12px;
         padding-bottom: 13px;
         padding-left: 1%;
     }
 
-    &__text {        
+    &__text {
         @include fontsMy(13px, 300, 16px);
         color: #B1B1B1;
-    }   
+    }
 
-    &__left {          
+    &__left {
         display: flex;
         justify-content: center;
-        flex-direction: column;       
+        flex-direction: column;
         padding-right: 0.5%;
         padding-left: 0.5%;
+
         &__form {
             width: 360px;
             display: flex;
@@ -256,11 +258,14 @@ label {
             align-items: start;
             gap: 20px;
         }
-        input[type='text'], [type='password'], [type='email'] {
+
+        input[type='text'],
+        [type='password'],
+        [type='email'] {
             width: 360px;
             height: 45px;
             border: 1px solid #a4a4a4;
-            @include fontsMy(13px, 300, 16px); 
+            @include fontsMy(13px, 300, 16px);
             padding: 0 17px;
 
             &::placeholder {
@@ -268,14 +273,14 @@ label {
             }
         }
 
-        input[type='radio'] { 
-            transform: scale(1.5); 
+        input[type='radio'] {
+            transform: scale(1.5);
             transition: 0.2s all linear;
             outline: none;
-            margin-right: 10px;             
+            margin-right: 10px;
         }
 
-        input[type='submit'] { 
+        input[type='submit'] {
             width: 167px;
             height: 50px;
             margin-top: 19px;
@@ -289,6 +294,7 @@ label {
             font-weight: 400;
             line-height: 17px;
             transition: 0.5s;
+
             &:hover {
                 border: violet;
                 color: violet;
@@ -298,22 +304,23 @@ label {
                 border: #000000;
                 color: #000000;
             }
-        }       
+        }
     }
 
     &__right {
-        width: 632px;       
-        display: flex;        
+        width: 625px;
+        display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
-        flex-direction: column; 
-        padding-right: 0.5%;        
+        flex-direction: column;
+        padding-right: 0.5%;
+
         &__title {
             @include fontsMy(24px, 300, 29px);
             color: #000;
             padding-bottom: 22px;
         }
-        
+
         &__action {
             gap: 16px;
         }
@@ -321,13 +328,11 @@ label {
         &__text {
             @include fontsMy(24px, 300, 29px);
             color: #000;
-            // padding-bottom: 16px;            
         }
 
         &__text:not(:last-child) {
-            padding-bottom: 16px; 
+            padding-bottom: 16px;
         }
-
     }
 }
 
@@ -340,14 +345,16 @@ label {
 
     &__item {
         position: relative;
+
         &__content {
             position: absolute;
             width: 100%;
             height: 100%;
             top: 0;
             left: 0;
-            @include displayMy(center);            
-            flex-direction: column;           
+            @include displayMy(center);
+            flex-direction: column;
+
             &__big {
                 margin-top: 5%;
             }
@@ -366,13 +373,13 @@ label {
         }
 
         &__text {
-            @include fontsMy(16px, 400, 19px);            
+            @include fontsMy(16px, 400, 19px);
             text-align: center;
             color: #FFFFFF;
         }
 
         &__heading {
-            @include fontsMy(24px, 700, 29px);           
+            @include fontsMy(24px, 700, 29px);
             color: #F16D7F;
         }
     }
@@ -383,26 +390,6 @@ label {
     grid-column: 1 / -1;
 }
 
-.action__content1 {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 5%;
-}
-
-.action__heading {
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 29px;
-    text-align: center;
-    color: #F16D7F;
-}
-
 .cart {
     display: flex;
     justify-content: space-between;
@@ -410,13 +397,14 @@ label {
     flex-direction: row;
     flex-wrap: wrap;
     margin-top: 96px;
+    margin-bottom: 96px;
 
-    &__left {        
+    &__left {
         width: 632px;
         display: flex;
         flex-direction: column;
         gap: 40px;
-        padding-bottom: 34px;
+        padding-bottom: 33px;
         padding-left: 1%;
         padding-right: 1%;
 
@@ -431,6 +419,7 @@ label {
                 top: 28px;
                 right: 22px;
                 transition: 0.5s;
+
                 &:hover {
                     background-color: #ebe6e6;
                     color: #FFF;
@@ -456,6 +445,7 @@ label {
                 justify-content: center;
                 align-items: center;
                 transition: 0.5s;
+
                 &:hover {
                     background-color: #ef5b70;
                     color: #FFF;
@@ -500,7 +490,6 @@ label {
     &__right {
         display: flex;
         flex-direction: column;
-        // flex-direction: row;
         flex-wrap: wrap;
         padding-top: 31px;
         padding-right: 1%;
@@ -512,7 +501,6 @@ label {
             flex-direction: column;
             align-items: start;
             gap: 20px;
-            // width: 100%;
 
             input {
                 width: 360px;
@@ -541,7 +529,6 @@ label {
 
                 &:hover {
                     background-color: #ef5b70;
-
                     color: #fff;
                 }
             }
@@ -553,7 +540,6 @@ label {
         }
 
         &__checkout {
-            // max-width: 360px;
             width: 360px;
             height: 214px;
             background-color: #F5F3F3;
@@ -565,12 +551,12 @@ label {
                 @include fontsMy(11px, 400, normal);
             }
 
-            &__grand {                
+            &__grand {
                 padding-top: 12px;
                 padding-left: 157px;
                 padding-bottom: 21px;
-                color: #222;
                 @include fontsMy(16px, 300, normal);
+                color: #222;
             }
 
             &__red {
@@ -582,11 +568,10 @@ label {
             &__line {
                 width: 275px;
                 height: 1px;
-                background-color: #e2e2e2;             
+                background-color: #e2e2e2;
                 margin-bottom: 17px;
                 margin-left: 43px;
             }
-
 
             &__browse {
                 width: 273px;
@@ -652,7 +637,6 @@ label {
         display: -ms-flexbox;
         display: flex;
         flex-wrap: wrap;
-        // gap: 30px;
     }
 
     &__summary {
@@ -700,8 +684,6 @@ summary::after {
 }
 
 .sort {
-    // padding-top: 65px;
-    // padding-bottom: 50px;
     padding-left: 30px;
     display: flex;
     gap: 28px;
@@ -774,13 +756,14 @@ summary::after {
 .description {
     position: relative;
     margin-top: -65px;
-    margin-bottom: 129px;
+    margin-bottom: 130px;
 
     &__content {
         max-width: 100%;
         @include displayMy(none);
         flex-direction: column;
-        ;
+        margin-right: 0.5%;
+        margin-left: 0.5%;
         background-color: #FFFFFF;
         border: 1px solid #EAEAEA;
         border-radius: 1px;
@@ -825,6 +808,7 @@ summary::after {
             color: #F26376;
             border: 1px solid #F26376;
             transition: 0.5s;
+
             &:hover {
                 background-color: #F16D7F;
                 color: #FFFFFF;
@@ -843,26 +827,23 @@ summary::after {
     &__text {
         text-align: center;
         margin-top: 6px;
-        margin-bottom: 49px;
+        margin-bottom: 47px;
         @include fontsMy(14px, 400, 17px);
         color: #9F9F9F;
     }
 }
 
 .top-content {
-    // padding-top: 130px;
-    // padding-bottom: 130x;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 360px);
-    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     justify-content: center;
+    padding-right: 0.5%;
+    padding-left: 0.5%;
 
     &__browse {
         @include displayMy(center);
-        margin-top: 48px;
-        margin-right: auto;
-        margin-left: auto;
-        margin-bottom: 95px;
+        margin: 48px auto 95px auto;
 
         &__text {
             width: 212px;
@@ -892,8 +873,7 @@ summary::after {
 
 .product {
     position: relative;
-    padding-right: 2%;
-    padding-left: 2%;
+
     &:hover .product__img {
         filter: brightness(0.5);
     }
@@ -939,7 +919,7 @@ summary::after {
         gap: 11px;
         @include fontsMy(14px, 400, 17px);
         border: 1px solid #fff;
-        color: #FFFFFF;       
+        color: #FFFFFF;
     }
 }
 
@@ -949,10 +929,7 @@ ul.pagination {
     flex-direction: row;
     justify-content: center;
     align-items: flex-end;
-    margin-top: 50px;
-    margin-right: auto;
-    margin-bottom: 96px;
-    margin-left: auto;
+    margin: 50px auto 96px auto;
     border: 1px solid #6F6E6E;
     border-radius: 3px;
 
@@ -972,14 +949,13 @@ ul.pagination {
 }
 
 .advantages {
-    background-color: #222222;
-    padding-top: 104px;
-    padding-bottom: 104px;
-    display: flex;
+    @include displayMy(center);
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    padding-top: 104px;
+    padding-bottom: 104px;
     gap: 30px;
+    background-color: #222222;
 
     &__item {
         width: 360px;
@@ -990,16 +966,12 @@ ul.pagination {
     }
 
     &__heading {
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 24px;
+        @include fontsMy(20px, 400, 24px);
         color: #FBFBFB;
     }
 
     &__text {
-        font-weight: 300;
-        font-size: 14px;
-        line-height: 17px;
+        @include fontsMy(14px, 300, 17px);
         text-align: center;
         color: #FBFBFB;
     }
@@ -1011,9 +983,12 @@ ul.pagination {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 48px;
-    margin-top: 96px;
     background-size: cover;
     background-image: url("img/subscribe.jpg");
+
+    &_product {
+        margin-top: 128px;
+    }
 
     &__vestibul {
         width: 360px;
@@ -1031,10 +1006,6 @@ ul.pagination {
     }
 
     &__promotion {
-        // padding-top: 150px;
-        // padding-bottom: 154px;
-        width: 560px;
-        @include displayMy(none);
         flex-direction: column;
 
         &__title {
@@ -1044,6 +1015,7 @@ ul.pagination {
         }
 
         &__subtitle {
+            text-align: center;
             color: #222224;
             @include fontsMy(18px, 400, 167.2%);
         }
@@ -1051,7 +1023,6 @@ ul.pagination {
         &__button {
             @include displayMy(center);
             flex-direction: row;
-            flex-wrap: wrap;
         }
     }
 }
@@ -1109,7 +1080,6 @@ ul.pagination {
     min-height: 75px;
     @include displayMy(space-between);
     flex-direction: row;
-    flex-wrap: wrap;
     background-color: #222222;
 
     &__left {
@@ -1139,11 +1109,18 @@ ul.pagination {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-    .registration__right {
-        width: 355px;
-        &__title, &__text {
-            @include fontsMy(16px, 300, 19px);
-        } 
+    .registration {
+        display: flex;
+        margin-top: 40px;
+
+        &__right {
+            width: 355px;
+
+            &__title,
+            &__text {
+                @include fontsMy(16px, 300, 19px);
+            }
+        }
     }
 
     .subscraibe {
@@ -1151,14 +1128,11 @@ ul.pagination {
         flex-direction: column;
         gap: 48px;
         padding-bottom: 140px;
-        // margin-top: 130px;
-        margin-top: 128px;
 
         &__vestibul {
             padding-top: 64px;
             padding-bottom: 0;
         }
-
     }
 
     .cart {
@@ -1166,37 +1140,65 @@ ul.pagination {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        margin-top: 59px;
+        margin-bottom: 128px;
+
+        &__left {
+            &__shoping {
+                margin-top: 22px;
+            }
+        }
 
         &__right {
             display: flex;
-            // flex-direction: column;
             flex-direction: row;
             align-items: center;
             gap: 15px;
         }
     }
+
+    .top-content {
+        grid-template-columns: repeat(2, 360px);
+    }
 }
 
 @media screen and (max-width: 767px) {
-    .registration {
-        display: flex;        
+    .head {
+        @include displayMy(center);
         flex-direction: column;
+        gap: 32px;
+    }
+
+    .registration {
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+
         &__right {
             width: 355px;
-            padding-top: 40px;            
+            padding-top: 40px;
             padding-left: 0.5%;
             padding-bottom: 4px;
-            &__title, &__text {
+
+            &__title,
+            &__text {
                 @include fontsMy(16px, 300, 19px);
-            }     
+            }
         }
     }
-    
+
+    .description {
+        margin-bottom: 65px;
+    }
+
     .subscraibe {
         @include displayMy(center);
         gap: 48px;
         padding-bottom: 140px;
-        margin-top: 96px;
+
+        &_product {
+            margin-top: 64px;
+        }
 
         &__vestibul {
             padding-top: 64px;
@@ -1211,12 +1213,24 @@ ul.pagination {
     .cart {
         display: flex;
         justify-content: center;
+        margin-top: 39px;
+        margin-bottom: 96px;
+
+        &__left {
+            &__shoping {
+                margin-top: 0;
+            }
+        }
 
         &__right {
-            padding-top: 14px;
+            padding-top: 15px;
             flex-direction: column;
             align-items: center;
             gap: 48px;
         }
+    }
+
+    .top-content {
+        grid-template-columns: repeat(1, 360px);
     }
 }
