@@ -149,22 +149,22 @@ a {
 
 .brand {
     display: flex;
-
     &__content {
-        display: flex;
-        align-items: center;
-
         width: 800px;
+        min-width: 415px;
+        min-height: 363px;        
+        display: flex;
+        align-items: center;        
         padding-left: 64px;
         background: #F1E4E6;
     }
 
     &__info {
+        min-width: 380px;
         padding-left: 16px;
         border-left: 12px solid #F16D7F;
-
         &__title {
-            @include fontsMy(48px, 900, 58px);
+            @include fontsMy(48px, 900, 44px);
             color: #222222;
         }
 
@@ -336,16 +336,18 @@ label {
     }
 }
 
+.item__big {
+    @include displayMy(center);
+}
+
 .action {
     display: grid;
     gap: 30px;
     grid-template-columns: repeat(3, 1fr);
     padding-top: 64px;
     padding-bottom: 96px;
-
     &__item {
         position: relative;
-
         &__content {
             position: absolute;
             width: 100%;
@@ -354,22 +356,11 @@ label {
             left: 0;
             @include displayMy(center);
             flex-direction: column;
-
-            &__big {
-                margin-top: 5%;
-            }
         }
 
         &__content-big {
             position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 5%;
+            margin: auto;
         }
 
         &__text {
@@ -386,8 +377,12 @@ label {
 }
 
 .item__big {
-    min-height: 180px;
     grid-column: 1 / -1;
+    &__img {
+        min-height: 120px;
+        min-width: 360px;
+        object-fit: cover;
+    }
 }
 
 .cart {
@@ -407,7 +402,6 @@ label {
         padding-bottom: 33px;
         padding-left: 1%;
         padding-right: 1%;
-
         &__product {
             position: relative;
             display: flex;
@@ -431,7 +425,6 @@ label {
             @include displayMy(space-between);
             flex-direction: row;
             margin-top: 32px;
-
             &__text {
                 width: 235px;
                 height: 50px;
@@ -445,12 +438,10 @@ label {
                 justify-content: center;
                 align-items: center;
                 transition: 0.5s;
-
                 &:hover {
                     background-color: #ef5b70;
                     color: #FFF;
                 }
-
                 &:active {
                     color: #000000;
                 }
@@ -465,7 +456,6 @@ label {
     &__description {
         flex-direction: column;
         padding-left: 31px;
-
         &__article {
             padding-top: 22px;
             padding-bottom: 42px;
@@ -494,14 +484,12 @@ label {
         padding-top: 31px;
         padding-right: 1%;
         gap: 57px;
-
         &__form {
             max-width: 360px;
             display: flex;
             flex-direction: column;
             align-items: start;
             gap: 20px;
-
             input {
                 width: 360px;
                 height: 45px;
@@ -511,7 +499,6 @@ label {
                 font-weight: 300;
                 line-height: 16px;
                 padding: 0 17px;
-
                 &::placeholder {
                     color: #b1b1b1;
                 }
@@ -526,7 +513,6 @@ label {
                 cursor: pointer;
                 padding: 11px 15px;
                 transition: all 0.2s ease-in-out;
-
                 &:hover {
                     background-color: #ef5b70;
                     color: #fff;
@@ -543,7 +529,6 @@ label {
             width: 360px;
             height: 214px;
             background-color: #F5F3F3;
-
             &__total {
                 padding-top: 39px;
                 padding-left: 230px;
@@ -584,11 +569,9 @@ label {
                 margin-right: auto;
                 margin-left: auto;
                 transition: all 0.5s;
-
                 &:hover {
                     color: red;
                 }
-
                 &:active {
                     color: #000000;
                 }
@@ -604,7 +587,6 @@ label {
     box-sizing: border-box;
     position: absolute;
     z-index: 1;
-
     &-box {
         position: relative;
         height: 40px;
@@ -652,7 +634,6 @@ label {
     &[open] {
         background: #FFFFFF;
         box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
-
         & .filter__summary {
             color: #F16D7F;
         }
@@ -660,7 +641,6 @@ label {
 
     &__category {
         margin-top: 16px;
-
         &-summary {
             font-style: normal;
             font-weight: 400;
@@ -671,16 +651,14 @@ label {
             border-left: 5px solid #F16D7F;
             border-bottom: 1px solid #EBEBEB;
         }
-
         &[open] .filter__category-summary {
             color: #F16D7F;
         }
     }
 }
 
-summary::after {
-    content: url(./img/Vector1.svg);
-    padding-right: 0.5em;
+summary::-webkit-details-marker {
+    display: none;
 }
 
 .sort {
@@ -697,6 +675,11 @@ summary::after {
         display: flex;
         align-items: center;
         gap: 10px;
+
+        &::after {
+            content: url(./img/Vector1.svg);
+            padding-right: 0.5em;
+        }
     }
 
     &__content {
@@ -732,12 +715,10 @@ summary::after {
     }
 }
 
-
 .dashicon__left {
     position: absolute;
     left: 15%;
     background-color: #ddd9d9;
-
     &:hover {
         border: 1px solid red;
     }
@@ -747,7 +728,6 @@ summary::after {
     position: absolute;
     right: 15%;
     background-color: #ddd9d9;
-
     &:hover {
         border: 1px solid red;
     }
@@ -757,7 +737,6 @@ summary::after {
     position: relative;
     margin-top: -65px;
     margin-bottom: 130px;
-
     &__content {
         max-width: 100%;
         @include displayMy(none);
@@ -767,7 +746,6 @@ summary::after {
         background-color: #FFFFFF;
         border: 1px solid #EAEAEA;
         border-radius: 1px;
-
         &__class {
             padding-top: 65px;
             padding-bottom: 12px;
@@ -808,7 +786,6 @@ summary::after {
             color: #F26376;
             border: 1px solid #F26376;
             transition: 0.5s;
-
             &:hover {
                 background-color: #F16D7F;
                 color: #FFFFFF;
@@ -840,7 +817,6 @@ summary::after {
     justify-content: center;
     padding-right: 0.5%;
     padding-left: 0.5%;
-
     &__browse {
         @include displayMy(center);
         margin: 48px auto 95px auto;
@@ -858,12 +834,10 @@ summary::after {
             justify-content: center;
             align-items: center;
             transition: 0.5s;
-
             &:hover {
                 background-color: #ef5b70;
                 color: #FFF;
             }
-
             &:active {
                 color: #000000;
             }
@@ -873,15 +847,12 @@ summary::after {
 
 .product {
     position: relative;
-
     &:hover .product__img {
         filter: brightness(0.5);
     }
-
     &:hover .product__add {
         display: flex;
     }
-
     &__content {
         display: flex;
         flex-direction: column;
@@ -932,15 +903,12 @@ ul.pagination {
     margin: 50px auto 96px auto;
     border: 1px solid #6F6E6E;
     border-radius: 3px;
-
     & li {
         display: inline;
-
         & a {
             color: black;
             float: left;
             padding: 8px 16px;
-
             &:hover {
                 color: red;
             }
@@ -956,7 +924,6 @@ ul.pagination {
     padding-bottom: 104px;
     gap: 30px;
     background-color: #222222;
-
     &__item {
         width: 360px;
         display: flex;
@@ -985,7 +952,6 @@ ul.pagination {
     gap: 48px;
     background-size: cover;
     background-image: url("img/subscribe.jpg");
-
     &_product {
         margin-top: 128px;
     }
@@ -996,7 +962,6 @@ ul.pagination {
         padding-bottom: 126px;
         @include displayMy(center);
         flex-direction: column;
-
         &__text {
             padding-top: 30px;
             text-align: center;
@@ -1007,7 +972,6 @@ ul.pagination {
 
     &__promotion {
         flex-direction: column;
-
         &__title {
             text-align: center;
             @include fontsMy(24px, 700, 167.2%);
@@ -1032,7 +996,6 @@ ul.pagination {
     display: flex;
     padding-top: 25px;
     align-items: center;
-
     &__background {
         position: relative;
     }
@@ -1051,7 +1014,6 @@ ul.pagination {
 .submitField {
     @include displayMy(none);
     padding-top: 25px;
-
     &__background {
         position: relative;
     }
@@ -1065,11 +1027,9 @@ ul.pagination {
         border: none;
         background: none;
         transition: 0.5s;
-
         &:hover {
             color: violet;
         }
-
         &:active {
             color: #000000;
         }
@@ -1081,7 +1041,6 @@ ul.pagination {
     @include displayMy(space-between);
     flex-direction: row;
     background-color: #222222;
-
     &__left {
         @include displayMy(none);
         @include fontsMy(16px, 400, normal);
@@ -1112,10 +1071,8 @@ ul.pagination {
     .registration {
         display: flex;
         margin-top: 40px;
-
         &__right {
             width: 355px;
-
             &__title,
             &__text {
                 @include fontsMy(16px, 300, 19px);
@@ -1128,7 +1085,6 @@ ul.pagination {
         flex-direction: column;
         gap: 48px;
         padding-bottom: 140px;
-
         &__vestibul {
             padding-top: 64px;
             padding-bottom: 0;
@@ -1142,7 +1098,6 @@ ul.pagination {
         flex-direction: column;
         margin-top: 59px;
         margin-bottom: 128px;
-
         &__left {
             &__shoping {
                 margin-top: 22px;
@@ -1154,6 +1109,18 @@ ul.pagination {
             flex-direction: row;
             align-items: center;
             gap: 15px;
+        }
+    }
+
+    .brand {
+        &__info {
+            &__title {
+                @include fontsMy(44px, 900, 44px);
+            }
+
+            &__heading {
+                @include fontsMy(30px, 700, 38px);
+            }
         }
     }
 
@@ -1169,6 +1136,37 @@ ul.pagination {
         gap: 32px;
     }
 
+    .brand {
+        &__content {
+            padding-left: 50px;
+        }
+
+        &__info {
+            &__title {
+                @include fontsMy(38px, 900, 44px);
+            }
+
+            &__heading {
+                @include fontsMy(28px, 700, 38px);
+            }
+        }
+    }
+
+    .action {
+        display: flex;
+        @include displayMy(center);
+        gap: 32px;
+        flex-direction: column;
+        padding-bottom: 64px;
+    }
+
+    .item__big {    
+        &__img {    
+            padding-right: 1%;
+            padding-left: 1%;
+        }    
+    }
+
     .registration {
         display: flex;
         flex-direction: column;
@@ -1179,7 +1177,6 @@ ul.pagination {
             padding-top: 40px;
             padding-left: 0.5%;
             padding-bottom: 4px;
-
             &__title,
             &__text {
                 @include fontsMy(16px, 300, 19px);
@@ -1195,7 +1192,6 @@ ul.pagination {
         @include displayMy(center);
         gap: 48px;
         padding-bottom: 140px;
-
         &_product {
             margin-top: 64px;
         }
@@ -1215,7 +1211,6 @@ ul.pagination {
         justify-content: center;
         margin-top: 39px;
         margin-bottom: 96px;
-
         &__left {
             &__shoping {
                 margin-top: 0;
